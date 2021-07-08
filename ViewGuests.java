@@ -26,8 +26,8 @@ public class ViewGuests {
 		
 
 		
-			Bank bank = new Bank();
-			bank.start();
+			Guest guest = new Guest();
+			guest.start();
 		}
 
 		private void start() {
