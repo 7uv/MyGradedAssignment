@@ -7,11 +7,7 @@ public abstract class Guest {
 	private String guestType;
 	
 	
-	public Guest(int id, String name, int roomNo, String guestType) {
-		this.id = id;
-		this.name= name;
-		this.roomNo= roomNo;
-		this.guestType = guestType;
+	
 	}
 	
 	public int getID() {
