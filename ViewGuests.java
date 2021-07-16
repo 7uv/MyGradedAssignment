@@ -15,17 +15,31 @@ import c209_ESE.STCGuest;
 
 
 public class ViewGuests {
+	
+	public static void main(String[] args) {
 
-		private ArrayList<Guest> guestList = new ArrayList<Guest>();
+		ArrayList<Guest> guestList = new ArrayList<Guest>();
+		
+		SHNGuest shn1 = new SHNGuest(3,"Deepa Rani","04-24", "SHN", 14, "Singapore PR");
+		SHNGuest shn2 = new SHNGuest(2, "Jamie Chan","04-22","SHN",21,"Singaporean");
+		
+		STCGuest stc1= new STCGuest(1,"Tan Wah Piow","02-68","STC","SR4501",4);
+		STCGuest stc2= new STCGuest(4,"Salmah Kassim","07-54","STC","SR4005",6);
+		STCGuest stc3= new STCGuest(5,"John Rosario","03-72","STC", "SR4982",2);
+		
+		
+		guestList.add(shn1);
+		guestList.add(shn2);
+		guestList.add(stc1);
+		guestList.add(stc2);
+		guestList.add(stc3);
+
 		
 
-		public static void main(String[] args) {
+	}	
 
-			ViewGuests vg = new ViewGuests();
-			vg.start();
 		
-		}
-
+		
 		private void start() {
 		int option = -1;
 		
@@ -78,12 +92,7 @@ public class ViewGuests {
 
 	private static void viewAllGuest(ArrayList<Guest> guestList) {
 		// TODO Auto-generated method stub
-		String output = "";
-		output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE", "TRAVEL DOC");
-		for (Guest i : guestList) {
-			output += String.format("-20s%-10.2f\n", i.getID(), i.getName(), i.getRoomNo(), i.getGuestType());
-		}
-		System.out.println(output);
+		
 		
 	}
 
@@ -99,7 +108,7 @@ public class ViewGuests {
 	    System.out.println("3. View SHN Guests");
 	    System.out.println("4. Quit");
 
-	}
+	     }
 
-}
-
+      }
+	
