@@ -23,6 +23,7 @@ public class ViewGuests {
 		
 		System.out.println("==== :: END OF EXECUTION :: ====");
 	}
+	
 	public static void main(String[] args) {
 		ArrayList<Guest> guestList = new ArrayList<Guest>();
 
