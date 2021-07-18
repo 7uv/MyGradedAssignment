@@ -11,30 +11,32 @@ public class Main {
 		System.out.println("==== PROGRAM START ====");
 		
 		// Database initialization
-		System.out.println("CreateDB");
+		// System.out.println("CreateDB");
 		CreateDB cdb = new CreateDB();
 		
 		// Initial cleanup
-		System.out.println("CleanUpService");
+		// System.out.println("CleanUpService");
 		CleanUpService cs = new CleanUpService();
 		
 		// Create all tables afresh
-		System.out.println("CreateTable");
+		// System.out.println("CreateTable");
 		CreateTable ctbl = new CreateTable();
 		
 		// Populate the table with sample values provided in question
-		System.out.println("TableOperations");
+		// System.out.println("TableOperations");
 		PopulateTable tbo = new PopulateTable();
 		tbo.insert();
-		tbo.update();
-		tbo.delete();
+		
+		// not required by the question 
+		//tbo.update();
+		//tbo.delete();
 		
 		// Call to ViewGuests
-		System.out.println("ViewGuests");
+		// System.out.println("ViewGuests");
 		ViewGuests vg = new ViewGuests();
 		
 		// Final cleanup
-		System.out.println("CleanUpService");
+		// System.out.println("CleanUpService");
 		CleanUpService csFinal = new CleanUpService();
     	
 		System.out.println("==== ::PROGRAM END:: ====");

@@ -12,6 +12,6 @@ public class CreateDB {
 			e.printStackTrace();
 			System.exit(0);
 		}
-		System.out.println("Opened database connections successfully");
+		// System.out.println("Opened database connections successfully");
 	}
 }

@@ -20,37 +20,29 @@ public class PopulateTable implements PopulateTableCore {
 
 	public void read() {
 		// Read operations
-		System.out.println("Attempting to read a row in test table");
-		query = "SELECT * FROM test";
+		// System.out.println("Attempting to read table");
 		hotelGuests = "SELECT * FROM hotel_guests";
 		travelDocs = "SELECT * FROM travel_docs";
 		try (Connection conn = cdb.ds.getConnection(); Statement stmt = conn.createStatement();) {
-			// All test rows
-			rs = stmt.executeQuery(query);
-			while (rs.next()) {
-				int id = rs.getInt("ID");
-				String name = rs.getString("NAME");
-				System.out.println("Result: ID = " + id + ", NAME = " + name);
-			}
-			System.out.println("All rows retrieved.");
-			
 			// All hotel_guests rows
+			rs = null;
 			rs = stmt.executeQuery(hotelGuests);
 			while (rs.next()) {
 				int id = rs.getInt("ID");
 				String name = rs.getString("NAME");
-				System.out.println("Result: ID = " + id + ", NAME = " + name);
+				// System.out.println("Result: ID = " + id + ", NAME = " + name);
 			}
-			System.out.println("All rows retrieved.");
+			// System.out.println("All hotel guests retrieved.");
 			
 			// All travel_docs rows
+			rs = null;
 			rs = stmt.executeQuery(travelDocs);
 			while (rs.next()) {
-				int id = rs.getInt("ID");
+				String id = rs.getString("ID");
 				String description = rs.getString("DESCRIPTION");
-				System.out.println("Result: ID = " + id + ", DESCRIPTION = " + description);
+				// System.out.println("Result: ID = " + id + ", DESCRIPTION = " + description);
 			}
-			System.out.println("All rows retrieved.");
+			// System.out.println("All travel docs retrieved.");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
@@ -58,7 +50,6 @@ public class PopulateTable implements PopulateTableCore {
 	}
 	
 	public void insert() {
-		query = "INSERT INTO test ( NAME ) VALUES ( 'Sharon' )";
 		hotelGuests = "INSERT INTO `hotel_guests` (`ID`, `Name`, `RoomNo`, `GuestType`, `DiscountCode`, `GroupSize`, `SHNdays`, `TravelDocID`) VALUES"
 				+ "(1, 'Tan Wah Piow', '02-68', 'STC', 'SR4501', 4, NULL, ''),"
 				+ "(2, 'Jamie Chan', '04-22', 'SHN', '', NULL, 21, 'TD01'),"
@@ -73,46 +64,50 @@ public class PopulateTable implements PopulateTableCore {
 				+ "('TD05', 'Student pass');";		
 		
 		try (Connection conn = cdb.ds.getConnection(); Statement stmt = conn.createStatement();) {
-			rv = stmt.executeUpdate(query);
-			System.out.println("test executeUpdate() returned " + rv);
-
 			rv = stmt.executeUpdate(hotelGuests);
-			System.out.println("hostel_guests executeUpdate() returned " + rv);
+			// System.out.println("hostel_guests insert statement returned " + rv);
 			
 			rv = stmt.executeUpdate(travelDocs);
-			System.out.println("travel_docs executeUpdate() returned " + rv);
+			// System.out.println("travel_docs insert statement returned " + rv);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
 		}
+		// System.out.println("Reading inserted items");
 		read();
 	}
 
+	/*
+	 * Only applying test updates for future implementation
+	 */
 	public void update() {
 		// Update operations
-		System.out.println("Attempting to update a row in test table");
+		// System.out.println("Attempting to update a row");
 		query = "UPDATE test SET NAME = 'Poopsie' WHERE NAME = 'Sharon'";
 		try (Connection conn = cdb.ds.getConnection(); Statement stmt = conn.createStatement();) {
 			rv = stmt.executeUpdate(query);
-			System.out.println("executeUpdate() returned " + rv);
+			// System.out.println("executeUpdate() returned " + rv);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
 		}
-		read();
+		//read();
 	}
 
+	/*
+	 * Only applying test deletes for future implementation
+	 */
 	public void delete() {
 		// Delete operations
-		System.out.println("Attempting to delete a row from test table");
+		// System.out.println("Attempting to delete a row from test table");
 		query = "DELETE FROM test WHERE NAME = 'Shane'";
 		try (Connection conn = cdb.ds.getConnection(); Statement stmt = conn.createStatement();) {
 			rv = stmt.executeUpdate(query);
-			System.out.println("executeUpdate() returned " + rv);
+			// System.out.println("executeUpdate() returned " + rv);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
 		}
-		read();
+		//read();
 	}
 }

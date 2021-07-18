@@ -26,19 +26,19 @@ public class CreateTable {
 		
 		try (Connection conn = cdb.ds.getConnection(); Statement stmt = conn.createStatement();) {
 			rv = stmt.executeUpdate(query);
-			System.out.println("create table test returned " + rv);
+			// System.out.println("create table test returned " + rv);
 
 			rv = stmt.executeUpdate(hotelGuests);
-			System.out.println("create table hotel_guests returned " + rv);
+			// System.out.println("create table hotel_guests returned " + rv);
 			
 			rv = stmt.executeUpdate(travelDocs);
-			System.out.println("create table travel_docs returned " + rv);
+			// System.out.println("create table travel_docs returned " + rv);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.exit(0);
 		} finally {
-			System.out.println("table creation completed");
+			// System.out.println("table creation completed");
 		}
 	}
 }

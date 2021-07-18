@@ -16,12 +16,12 @@ import util.Helper;
 
 public class ViewGuests {
 	public ViewGuests() {
-		System.out.println("==== START OF EXECUTION ====");
+		// System.out.println("==== START OF EXECUTION ====");
 		
 		
 		
 		
-		System.out.println("==== :: END OF EXECUTION :: ====");
+		// System.out.println("==== :: END OF EXECUTION :: ====");
 	}
 	
 	public static void main(String[] args) {
