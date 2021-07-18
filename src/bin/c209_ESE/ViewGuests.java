@@ -21,6 +21,9 @@ public class ViewGuests {
 	public ViewGuests() {
 		// System.out.println("==== START OF EXECUTION ====");
 		prePopulate();
+		viewAllGuest(guestList);
+		viewSHNGuest(guestList);
+		viewSTCGuest(guestList);
 		chooseMenu();
 		// System.out.println("==== :: END OF EXECUTION :: ====");
 	}
@@ -70,10 +73,10 @@ public class ViewGuests {
 		// TODO Auto-generated method stub
 
 		String output = "";
-		output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE",
-				"TRAVEL DOC");
+		//output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE","TRAVEL DOC");
 		for (Guest i : guestList) {
-			output += String.format("-20s%-10.2f\n", i.getID(), i.getName(), i.getRoomNo(), i.getGuestType());
+			//output += String.format("-20s%-10.2f\n",i.getID(),i.getName(),i.getRoomNo(),i.getGuestType());
+			output += i.getID() + " " + i.getName() + " " + i.getRoomNo() + " " + i.getGuestType();
 		}
 		System.out.println(output);
 
@@ -82,17 +85,23 @@ public class ViewGuests {
 	private void viewSTCGuest(ArrayList<Guest> guestList) {
 		// TODO Auto-generated method stub
 		String output = "";
-		output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE",
-				"TRAVEL DOC");
+		//output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE","TRAVEL DOC");
 		for (Guest i : guestList) {
-			output += String.format("-20s%-10.2f\n", i.getID(), i.getName(), i.getRoomNo(), i.getGuestType());
+			// i.getID(), i.getName(), i.getRoomNo(), i.getGuestType());
+			output += i.getID() + " " + i.getName() + " " + i.getRoomNo() + " " + i.getGuestType();
 		}
 		System.out.println(output);
 	}
 
 	private void viewAllGuest(ArrayList<Guest> guestList) {
 		// TODO Auto-generated method stub
-
+		String output = "";
+		//output += String.format("-20s%-10s\n", "REG ID", "NAME", "ROOM NO", "GUEST TYPE", "DAYS TO SERVE","TRAVEL DOC");
+		for (Guest i : guestList) {
+			// i.getID(), i.getName(), i.getRoomNo(), i.getGuestType());
+			output += i.getID() + " " + i.getName() + " " + i.getRoomNo() + " " + i.getGuestType();
+		}
+		System.out.println(output);
 	}
 
 	private void mainMenu() {
