@@ -8,7 +8,7 @@ import util.PopulateTable;
 public class Main {
     @SuppressWarnings("unused")
 	public static void main(String[] args) {
-		System.out.println("==== PROGRAM START ====");
+		// System.out.println("==== PROGRAM START ====");
 		
 		// Database initialization
 		// System.out.println("CreateDB");
@@ -39,6 +39,6 @@ public class Main {
 		// System.out.println("CleanUpService");
 		CleanUpService csFinal = new CleanUpService();
     	
-		System.out.println("==== ::PROGRAM END:: ====");
+		// System.out.println("==== ::PROGRAM END:: ====");
     }
 }
