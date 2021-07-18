@@ -20,7 +20,6 @@ public class SHNGuest extends Guest{
 		
 		this.daysServe= daysServe;
 		this.travelDoc = travelDoc;
-		// TODO Auto-generated constructor stub
 	}
 	
 	public int getDaysServe() {
@@ -35,10 +34,8 @@ public class SHNGuest extends Guest{
 
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
 		System.out.println("Days Serving: " + daysServe);
 		System.out.println("Travel Document: " + travelDoc);
-		
 	}
 	
 }

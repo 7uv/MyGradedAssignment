@@ -12,14 +12,16 @@ public abstract class Guest {
 	private String roomNo;
 	private String guestType;
 	
+	public Guest() {
+		
+	}
+	
 	public Guest(int id, String name, String roomNo, String guestType) {
 		this.id = id;
 		this.name = name;
 		this.roomNo = roomNo;
 		this.guestType = guestType;
 	}
-	
-	
 	
 	public int getID() {
 		return id;

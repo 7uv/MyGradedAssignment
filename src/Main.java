@@ -2,8 +2,8 @@
 import bin.c209_ESE.ViewGuests;
 import db.CreateDB;
 import db.CreateTable;
-import db.TableOperations;
 import service.CleanUpService;
+import service.TableOperations;
 
 public class Main {
     @SuppressWarnings("unused")
@@ -13,12 +13,17 @@ public class Main {
 		// Database initialization
 		System.out.println("CreateDB");
 		CreateDB cdb = new CreateDB();
+		System.out.println("CleanUpService");
+		CleanUpService cs = new CleanUpService();
 		System.out.println("CreateTable");
 		CreateTable ctbl = new CreateTable();
 		
 		// Table operations
 		System.out.println("TableOperations");
 		TableOperations tbo = new TableOperations();
+		tbo.insert();
+		tbo.update();
+		tbo.delete();
 		
 		// Call to ViewGuests
 		System.out.println("ViewGuests");
@@ -26,7 +31,7 @@ public class Main {
 		
 		// Final cleanup
 		System.out.println("CleanUpService");
-		CleanUpService cs = new CleanUpService();
+		CleanUpService csFinal = new CleanUpService();
     	
 		System.out.println("==== ::PROGRAM END:: ====");
     }
