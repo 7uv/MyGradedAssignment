@@ -9,9 +9,9 @@ package bin.c209_ESE;
 
 import java.util.ArrayList;
 
-import core.Guest;
-import service.SHNGuest;
-import service.STCGuest;
+import model.Guest;
+import model.SHNGuest;
+import model.STCGuest;
 import util.Helper;
 
 public class ViewGuests {

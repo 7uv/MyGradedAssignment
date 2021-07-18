@@ -1,20 +1,20 @@
-package service;
+package util;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import core.TableOperationsCore;
+import core.PopulateTableCore;
 import db.CreateDB;
 
-public class TableOperations implements TableOperationsCore {
+public class PopulateTable implements PopulateTableCore {
 	String query, query1, query2, hotelGuests, travelDocs = "";
 	int rv = 0;
 	CreateDB cdb = new CreateDB();
 	ResultSet rs = null;
 
-	public TableOperations() {
+	public PopulateTable() {
 
 	}
 
@@ -56,7 +56,7 @@ public class TableOperations implements TableOperationsCore {
 			System.exit(0);
 		}
 	}
-
+	
 	public void insert() {
 		query = "INSERT INTO test ( NAME ) VALUES ( 'Sharon' )";
 		hotelGuests = "INSERT INTO `hotel_guests` (`ID`, `Name`, `RoomNo`, `GuestType`, `DiscountCode`, `GroupSize`, `SHNdays`, `TravelDocID`) VALUES"

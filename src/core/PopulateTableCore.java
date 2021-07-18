@@ -1,6 +1,6 @@
 package core;
 
-public interface TableOperationsCore {
+public interface PopulateTableCore {
     void read();
     void insert();
     void update();

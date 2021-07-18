@@ -3,7 +3,7 @@ import bin.c209_ESE.ViewGuests;
 import db.CreateDB;
 import db.CreateTable;
 import service.CleanUpService;
-import service.TableOperations;
+import util.PopulateTable;
 
 public class Main {
     @SuppressWarnings("unused")
@@ -13,14 +13,18 @@ public class Main {
 		// Database initialization
 		System.out.println("CreateDB");
 		CreateDB cdb = new CreateDB();
+		
+		// Initial cleanup
 		System.out.println("CleanUpService");
 		CleanUpService cs = new CleanUpService();
+		
+		// Create all tables afresh
 		System.out.println("CreateTable");
 		CreateTable ctbl = new CreateTable();
 		
-		// Table operations
+		// Populate the table with sample values provided in question
 		System.out.println("TableOperations");
-		TableOperations tbo = new TableOperations();
+		PopulateTable tbo = new PopulateTable();
 		tbo.insert();
 		tbo.update();
 		tbo.delete();
